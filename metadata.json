@@ -1,0 +1,6 @@
+{
+  "name": "GEORuhay - Sistem Informasi Geospasial Kabupaten Lebak",
+  "description": "Platform Geospasial Kabupaten Lebak, Provinsi Banten. Menyatukan data resmi Badan Informasi Geospasial (BIG) dan pemetaan partisipatif desa oleh Sang Pejuang Lebak.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

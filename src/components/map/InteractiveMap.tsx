@@ -19,8 +19,10 @@ import {
   Filter,
   Plus,
   Trash2,
-  ExternalLink
+  ExternalLink,
+  Mountain
 } from 'lucide-react';
+import { Map3DThree } from './Map3DThree';
 import { store } from '../../services/store';
 import { Dataset, SpatialFeature, LayerSetting } from '../../types';
 import {
@@ -83,6 +85,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   const measureLayerGroupRef = useRef<L.LayerGroup | null>(null);
 
   // States
+  const [dimensionMode, setDimensionMode] = useState<'2D' | '3D'>('2D');
   const [currentBasemap, setCurrentBasemap] = useState<keyof typeof BASEMAP_TILES>('positron');
   const [layers, setLayers] = useState<LayerSetting[]>([]);
   const [datasets, setDatasets] = useState<Dataset[]>([]);
@@ -455,13 +458,39 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     }
   };
 
+  if (dimensionMode === '3D') {
+    return (
+      <Map3DThree
+        onSwitchTo2D={() => setDimensionMode('2D')}
+        onSelectFeature={(feat) => setSelectedFeature(feat)}
+      />
+    );
+  }
+
   return (
     <div className="relative w-full h-[calc(100vh-4rem)] bg-slate-100 overflow-hidden flex">
       {/* Map canvas */}
       <div ref={mapContainerRef} className="w-full h-full z-0" />
 
-      {/* Floating Top Bar on Map: Search & Basemap Switcher */}
+      {/* Floating Top Bar on Map: 2D/3D Switcher, Search & Basemap Switcher */}
       <div className="absolute top-3 left-16 z-30 flex flex-wrap items-center gap-2 max-w-2xl">
+        {/* Dimension Switcher: 2D Leaflet <-> 3D Three.js */}
+        <div className="flex items-center p-0.5 bg-white rounded-lg border border-slate-200 shadow-md">
+          <button
+            onClick={() => setDimensionMode('2D')}
+            className="px-2.5 py-1 text-xs font-semibold rounded-md bg-[#1B4332] text-white shadow-xs flex items-center gap-1.5"
+          >
+            <Layers className="w-3.5 h-3.5" />
+            <span>2D Leaflet</span>
+          </button>
+          <button
+            onClick={() => setDimensionMode('3D')}
+            className="px-2.5 py-1 text-xs font-semibold rounded-md text-slate-600 hover:text-slate-900 transition-colors flex items-center gap-1.5"
+          >
+            <Mountain className="w-3.5 h-3.5 text-[#2D6A4F]" />
+            <span>3D Three.js</span>
+          </button>
+        </div>
         {/* Search Input Box */}
         <div className="relative w-72 sm:w-80 shadow-md rounded-lg">
           <div className="relative flex items-center bg-white rounded-lg border border-slate-200">

@@ -10,7 +10,8 @@ import {
   TreePine,
   Building2,
   Droplet,
-  ExternalLink
+  ExternalLink,
+  Mountain
 } from 'lucide-react';
 import { store } from '../../services/store';
 import { Dataset } from '../../types';
@@ -60,7 +61,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-[#74C69D] bg-white/10 backdrop-blur-xs px-3 py-1.5 rounded-md border border-white/15">
               <span>Kabupaten Lebak · Provinsi Banten</span>
               <span aria-hidden="true">·</span>
-              <span>Ina-Geoportal & Pejuang Lebak</span>
+              <span>Leaflet 2D & Three.js 3D Relief</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight" style={{ textWrap: 'balance' }}>
@@ -68,7 +69,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             </h1>
 
             <p className="text-base sm:text-lg text-slate-200 leading-relaxed max-w-xl">
-              Platform geospasial terintegrasi yang menyatukan data resmi Badan Informasi Geospasial (BIG) dan pemetaan partisipatif desa oleh Sang Pejuang Lebak. "Menyatukan Data, Memetakan Lebak."
+              Platform geospasial terintegrasi yang menyatukan data resmi Badan Informasi Geospasial (BIG) dan pemetaan partisipatif desa oleh Sang Pejuang Lebak dengan visualisasi peta interaktif 2D dan topografi 3D Three.js.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -77,7 +78,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 className="px-6 py-3 text-sm font-semibold text-[#14261C] bg-[#52B788] hover:bg-[#74C69D] rounded-lg shadow-sm transition-colors flex items-center gap-2 whitespace-nowrap shrink-0"
               >
                 <Compass className="w-4 h-4" />
-                <span>Buka Peta Interaktif</span>
+                <span>Buka Peta Interaktif (2D & 3D)</span>
               </button>
 
               <button

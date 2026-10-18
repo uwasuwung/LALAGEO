@@ -20,6 +20,15 @@ GEORuhay adalah platform Sistem Informasi Geospasial (GIS) terintegrasi yang men
   - Pencarian Lokasi Cepat: Cari nama lokasi, 28 kecamatan Lebak, atau masukkan koordinat langsung (contoh: `-6.357, 106.248`).
   - Simbologi & Legenda interaktif.
 
+- **Peta Topografi 3 Dimensi (Three.js WebGL):**
+  - **Relief Topografi Digital (DEM):** Pemodelan elevasi 3D Kabupaten Lebak dari dataran pantai selatan (Bayah & Malingping ~0–50m), perbukitan tengah Leuwidamar & Baduy (~200–500m), hingga pegunungan tinggi Taman Nasional Gunung Halimun Salak & Cibeber (~1.000–1.800m).
+  - **Eksagerasi Vertikal (0.5x – 4.0x):** Slider dinamis untuk mengatur keterjalan relief bumi secara visual.
+  - **Pencahayaan & Sudut Matahari:** Kontrol sudut datang cahaya matahari (10° – 85°) untuk mensimulasikan bayangan relief pagi, siang, dan sore hari.
+  - **Penanda Objek 3D & Raycasting Interaktif:** Tiang cahaya vertikal dan bola menyala pada titik fasilitas publik, RSUD, Bendungan Karian, dan Balai Adat Baduy dengan klik untuk menampilkan atribut data.
+  - **Jalur Vektor 3D:** Aliran Sungai Ciujung dan batas garis putus-putus wilayah adat Kanekes (Baduy) melayang mengikuti kontur elevasi tanah.
+  - **Preset Sudut Kamera:** Isometrik, Fokus Kawasan Baduy, Puncak Halimun Salak, Pesisir Bayah, dan Tampilan Atas (Tegak).
+  - **Beralih Mulus 2D & 3D:** Tombol sakelar terpadu untuk berganti antara peta kartografi 2D Leaflet dan pemodelan medan 3D Three.js.
+
 - **Katalog Data Geospasial:**
   - Penelusuran dan filter berbasis kategori, kelompok sumber (BIG vs Pejuang Lebak), tahun, format, dan status verifikasi.
   - Detail metadata standar SNI / ISO 19115 (wali data, metodologi, sistem referensi koordinat, lisensi).
